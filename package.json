@@ -1,0 +1,45 @@
+{
+    "name": "homebridge-schedule",
+    "version": "1.0.0",
+    "description": "Scheduled, repeatable triggers for Homebridge automation with Homekit",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/kbrashears5/homebridge-schedule.git"
+    },
+    "bugs": {
+        "url": "https://github.com/kbrashears5/homebridge-schedule/issues"
+    },
+    "homepage": "https://github.com/kbrashears5/homebridge-schedule#readme",
+    "author": "Kevin Brashears",
+    "license": "MIT",
+    "keywords": [
+        "homebridge-plugin",
+        "homebridge",
+        "typescript",
+        "plugin",
+        "schedule",
+        "repeat"
+    ],
+    "main": "dist/schedule-accessory.js",
+    "dependencies": {},
+    "devDependencies": {
+        "homebridge": "^1.0.4",
+        "rimraf": "^3.0.2",
+        "tslint": "^6.1.2",
+        "typescript": "^3.8.3"
+    },
+    "files": [
+        "LICENSE",
+        "dist"
+    ],
+    "scripts": {
+        "build": "rimraf ./dist && tsc",
+        "clean": "rimraf ./dist",
+        "prepublishOnly": "npm run build",
+        "postpublish": "npm run clean",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "engines": {
+        "homebridge": ">=1.0.0"
+    }
+}
