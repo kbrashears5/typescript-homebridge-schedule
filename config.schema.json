@@ -1,0 +1,21 @@
+{
+    "pluginAlias": "Schedule",
+    "pluginType": "accessory",
+    "singular": false,
+    "schema": {
+        "type": "object",
+        "properties": {
+            "name": {
+                "title": "Name",
+                "type": "string",
+                "required": true
+            },
+            "time": {
+                "title": "Interval",
+                "type": "number",
+                "default": 60,
+                "description": "Interval, in minutes"
+            }
+        }
+    }
+}

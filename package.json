@@ -23,6 +23,7 @@
     "main": "dist/schedule-accessory.js",
     "dependencies": {},
     "devDependencies": {
+        "@types/node": "^14.0.1",
         "homebridge": "^1.0.4",
         "rimraf": "^3.0.2",
         "tslint": "^6.1.2",
