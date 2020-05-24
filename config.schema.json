@@ -13,7 +13,6 @@
             "time": {
                 "title": "Interval",
                 "type": "number",
-                "default": 60,
                 "description": "Interval, in minutes"
             }
         }
