@@ -66,6 +66,12 @@ class ScheduleAccessory implements AccessoryPlugin {
 			.setCharacteristic(hap.Characteristic.Model, config.interval);
 
 		log.info('Initialization complete');
+
+		log.info(`Sarting ${config.interval} minute schedule`);
+
+		setInterval(() => {
+			this.switchService.setCharacteristic(Characteristic.On, true);
+		}, (config.interval * 60000));
 	}
 
 	/*

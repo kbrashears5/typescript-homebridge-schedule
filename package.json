@@ -18,7 +18,8 @@
         "typescript",
         "plugin",
         "schedule",
-        "repeat"
+        "repeat",
+        "automation"
     ],
     "main": "dist/schedule-accessory.js",
     "dependencies": {},
