@@ -2,7 +2,6 @@ import {
 	AccessoryConfig,
 	AccessoryPlugin,
 	API,
-	Characteristic,
 	CharacteristicEventTypes,
 	CharacteristicGetCallback,
 	CharacteristicSetCallback,
@@ -53,7 +52,7 @@ class ScheduleAccessory implements AccessoryPlugin {
 
 				if (value) {
 					setTimeout(() => {
-						this.switchService.setCharacteristic(Characteristic.On, false);
+						this.switchService.setCharacteristic('On', false);
 					}, 1000);
 				}
 
@@ -70,7 +69,7 @@ class ScheduleAccessory implements AccessoryPlugin {
 		log.info(`Sarting ${config.interval} minute schedule`);
 
 		setInterval(() => {
-			this.switchService.setCharacteristic(Characteristic.On, true);
+			this.switchService.setCharacteristic('On', true);
 		}, (config.interval * 60000));
 	}
 
