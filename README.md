@@ -1,9 +1,14 @@
 # Homebridge-Schedule
 This [Homebridge](https://github.com/nfarina/homebridge) plugin allows you to create Homekit automations for more than just the default "A time of day occurrs"
 
-The original thought for this was to create an hourly check to check my thermostat in the house and send me a notification if it was above or below a certain threshold
+The original thought for this was to create an hourly automation to check my thermostat in the house and send me a notification if it was above or below a certain threshold
 
 Homebridge-Schedule is similar to [Homebridge-Dummy](https://github.com/nfarina/homebridge-dummy), in the sense that it creates some dummy switches in Homekit that turn on at your desired interval. They will turn off one second later. This is useful for triggering automations, or even shortcuts.
+
+## Installation
+```
+npm i homebridge-schedule@latest -g
+```
 
 ## Usage
 Add accessories to your `config.json` similar to below:
