@@ -1,20 +1,22 @@
 {
-    "pluginAlias": "Schedule",
-    "pluginType": "accessory",
-    "singular": false,
-    "schema": {
-        "type": "object",
-        "properties": {
-            "name": {
-                "title": "Name",
-                "type": "string",
-                "required": true
-            },
-            "time": {
-                "title": "Interval",
-                "type": "number",
-                "description": "Interval, in minutes"
-            }
+  "pluginAlias": "Schedule",
+  "pluginType": "accessory",
+  "singular": false,
+  "headerDisplay": "This [Homebridge](https://github.com/nfarina/homebridge) plugin allows you to create Homekit automations for more than just the default, A time of day occurrs.\n\n The original thought for this was to create an hourly automation to check my thermostat in the house and send me a notification if it was above or below a certain threshold.\n\n Homebridge-Schedule is similar to [Homebridge-Dummy](https://github.com/nfarina/homebridge-dummy), in the sense that it creates some dummy switches in Homekit that turn on at your desired interval. They will turn off one second later. This is useful for triggering automations, or even shortcuts.",
+  "footerDisplay": "The interval starts when Homebridge is started up. If you want something to run hourly on the hour, then you need to make sure Homebridge is started up on the hour.",
+  "schema": {
+    "type": "object",
+    "properties": {
+        "name": {
+            "type": "string",
+            "title": "Name",
+            "description": "Unique name for the dummy switch"
+        },
+        "interval": {
+            "type": "integer",
+            "title": "Interval",
+            "description": "Interval, in minutes."
         }
     }
+}
 }
