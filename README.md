@@ -63,3 +63,28 @@ Steps:
 3. Select Turns On and add any desired time or people conditions
 4. You can then choose a scene or another accessory to control, or at the very bottom, you can create a shortcut
 5. Done! You now have one automation for things you want to happen hourly rather than 24
+
+## Creating HomeKit Automations
+Create new Accessory automation:
+![Step1](images\step1.jpg)
+
+Choose the accessory created by homebridge-schedule:
+![Step2](images\step2.jpg)
+
+Select when it turns on or turns off and any time or people configurations
+![Step3](images\step3.jpg)
+
+Scroll all the way to the bottom and choose `Convert to Shortcut`
+![Step4](images\step4.jpg)
+
+Create shortcut:
+1. Get the current temperature of a Homekit thermostat
+2. Convert to Fahrenheit
+3. If the indoor temperature is greater than a threshold
+   - Get current weather outside
+   - Convert to Fahrenheit
+   - If the current weather outside is also above a threshold
+      - Turn on fans, set thermostat, etc.
+
+![Step5](images\step5_1.jpg)
+![Step5](images\step5_2.jpg)
