@@ -41,15 +41,15 @@ class ScheduleAccessory implements AccessoryPlugin {
 		this.log = log;
 		this.name = config.name;
 
-		log.debug(`Name: [${config.name}]`)
-		log.debug(`Interval: [${config.interval}]`)
-		log.debug(`Cron: [${config.cron}]`)
+		log.info(`Name: [${config.name}]`)
+		log.info(`Interval: [${config.interval}]`)
+		log.info(`Cron: [${config.cron}]`)
 
 		// determine what was provided by config
 		const intervalSupplied = this.objectOperations.IsNullOrEmpty(config.interval);
 		const cronSupplied = this.objectOperations.IsNullOrEmpty(config.cron);
-		log.debug(`Interval param supplied: [${intervalSupplied}]`);
-		log.debug(`Cron param supplied: [${cronSupplied}]`);
+		log.info(`Interval param supplied: [${intervalSupplied}]`);
+		log.info(`Cron param supplied: [${cronSupplied}]`);
 
 		log.info(`Creating schedule accessory [${config.name}]`);
 
