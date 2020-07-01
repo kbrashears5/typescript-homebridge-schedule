@@ -46,8 +46,8 @@ class ScheduleAccessory implements AccessoryPlugin {
 		log.info(`Cron: [${config.cron}]`)
 
 		// determine what was provided by config
-		let intervalSupplied = false;
-		let cronSupplied = false;
+		let intervalSupplied = true;
+		let cronSupplied = true;
 
 		if (config.interval === undefined) {
 			intervalSupplied = false;
