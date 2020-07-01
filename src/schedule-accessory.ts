@@ -62,7 +62,7 @@ class ScheduleAccessory implements AccessoryPlugin {
 			log.error('Must supply either interval or cron');
 		}
 		// error - both supplied
-		else if (config && cronSupplied) {
+		else if (intervalSupplied && cronSupplied) {
 			log.error('Cannot have both interval and cron. Choose one or the other');
 		}
 
