@@ -41,27 +41,26 @@ class ScheduleAccessory implements AccessoryPlugin {
 		this.log = log;
 		this.name = config.name;
 
-		log.info(`Name: [${config.name}]`)
-		log.info(`Interval: [${config.interval}]`)
-		log.info(`Cron: [${config.cron}]`)
+		// log config parameters
+		log.debug(`Name: [${config.name}]`)
+		log.debug(`Interval: [${config.interval}]`)
+		log.debug(`Cron: [${config.cron}]`)
 
 		// determine what was provided by config
 		let intervalSupplied = true;
-		let cronSupplied = true;
-
 		if (config.interval === undefined) {
 			intervalSupplied = false;
 		}
-		log.info(`Interval param supplied: [${intervalSupplied}]`);
+		log.debug(`Interval param supplied: [${intervalSupplied}]`);
 
-		cronSupplied = !this.objectOperations.IsNullOrWhitespace(config.cron);
-		log.info(`Cron param supplied: [${cronSupplied}]`);
+		const cronSupplied = !this.objectOperations.IsNullOrWhitespace(config.cron);
+		log.debug(`Cron param supplied: [${cronSupplied}]`);
 
 		// if neither params were supplied
 		if (!intervalSupplied && !cronSupplied) {
 			log.error('Must supply either interval or cron');
 		}
-		// error - both supplied
+		// if both supplied
 		else if (intervalSupplied && cronSupplied) {
 			log.error('Cannot have both interval and cron. Choose one or the other');
 		}
@@ -115,6 +114,9 @@ class ScheduleAccessory implements AccessoryPlugin {
 			});
 
 			job.start();
+		}
+		else {
+			log.error('Nothing started - check config');
 		}
 	}
 
