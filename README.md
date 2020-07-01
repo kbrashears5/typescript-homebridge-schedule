@@ -66,16 +66,16 @@ Steps:
 
 ## Creating HomeKit Automations
 Create new Accessory automation:
-![Step1](images\step1.jpg)
+![Step1](https://github.com/kbrashears5/homebridge-schedule/blob/master/images/step1.jpg?raw=true)
 
 Choose the accessory created by homebridge-schedule:
-![Step2](images\step2.jpg)
+![Step2](https://github.com/kbrashears5/homebridge-schedule/blob/master/images/step2.jpg?raw=true)
 
 Select when it turns on or turns off and any time or people configurations
-![Step3](images\step3.jpg)
+![Step3](https://github.com/kbrashears5/homebridge-schedule/blob/master/images/step3.jpg?raw=true)
 
 Scroll all the way to the bottom and choose `Convert to Shortcut`
-![Step4](images\step4.jpg)
+![Step4](https://github.com/kbrashears5/homebridge-schedule/blob/master/images/step4.jpg?raw=true)
 
 Create shortcut:
 1. Get the current temperature of a Homekit thermostat
@@ -86,5 +86,5 @@ Create shortcut:
    - If the current weather outside is also above a threshold
       - Turn on fans, set thermostat, etc.
 
-![Step5](images\step5_1.jpg)
-![Step5](images\step5_2.jpg)
+![Step5](https://github.com/kbrashears5/homebridge-schedule/blob/master/images/step5_1.jpg?raw=true)
+![Step5](https://github.com/kbrashears5/homebridge-schedule/blob/master/images/step5_2.jpg?raw=true)
