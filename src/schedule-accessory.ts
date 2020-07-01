@@ -46,11 +46,27 @@ class ScheduleAccessory implements AccessoryPlugin {
 		log.info(`Cron: [${config.cron}]`)
 
 		// determine what was provided by config
-		const intervalSupplied = config.interval !== 0;
-		const cronSupplied = !this.objectOperations.IsNullOrWhitespace(config.cron);
+		let intervalSupplied = false;
+		let cronSupplied = false;
+
+		if (config.interval === undefined) {
+			intervalSupplied = false;
+		}
 		log.info(`Interval param supplied: [${intervalSupplied}]`);
+
+		cronSupplied = !this.objectOperations.IsNullOrWhitespace(config.cron);
 		log.info(`Cron param supplied: [${cronSupplied}]`);
 
+		// if neither params were supplied
+		if (!intervalSupplied && !cronSupplied) {
+			log.error('Must supply either interval or cron');
+		}
+		// error - both supplied
+		else if (config && cronSupplied) {
+			log.error('Cannot have both interval and cron. Choose one or the other');
+		}
+
+		// create accessory
 		log.info(`Creating schedule accessory [${config.name}]`);
 
 		this.switchService = new hap.Service.Switch(this.name);
@@ -99,15 +115,6 @@ class ScheduleAccessory implements AccessoryPlugin {
 			});
 
 			job.start();
-		}
-		// error - neither supplied
-		else if (!config && !cronSupplied) {
-			log.error('Must supply either interval or cron')
-		}
-		// error - both supplied
-		else if (config && cronSupplied) {
-			log.error('Cannot have both interval and cron. Choose one or the other')
-
 		}
 	}
 
