@@ -10,6 +10,8 @@ import {
 	Logging,
 	Service,
 } from 'homebridge';
+import { ObjectOperations } from 'typescript-helper-functions';
+import { CronJob } from 'cron';
 
 let hap: HAP;
 
@@ -29,26 +31,55 @@ class ScheduleAccessory implements AccessoryPlugin {
 	private readonly switchService: Service;
 	private readonly informationService: Service;
 
+	private readonly objectOperations: ObjectOperations;
+
 	constructor(log: Logging,
 		config: AccessoryConfig) {
+
+		this.objectOperations = new ObjectOperations();
+
 		this.log = log;
 		this.name = config.name;
 
-		log.info(`Name: ${config.name}`)
-		log.info(`Interval: ${config.interval}`)
+		// log config parameters
+		log.debug(`Name: [${config.name}]`)
+		log.debug(`Interval: [${config.interval}]`)
+		log.debug(`Cron: [${config.cron}]`)
+
+		// determine what was provided by config
+		let intervalSupplied = true;
+		if (config.interval === undefined) {
+			intervalSupplied = false;
+		}
+		log.debug(`Interval param supplied: [${intervalSupplied}]`);
+
+		const cronSupplied = !this.objectOperations.IsNullOrWhitespace(config.cron);
+		log.debug(`Cron param supplied: [${cronSupplied}]`);
+
+		// if neither params were supplied
+		if (!intervalSupplied && !cronSupplied) {
+			log.error('Must supply either interval or cron');
+		}
+		// if both supplied
+		else if (intervalSupplied && cronSupplied) {
+			log.error('Cannot have both interval and cron. Choose one or the other');
+		}
+
+		// create accessory
+		log.info(`Creating schedule accessory [${config.name}]`);
 
 		this.switchService = new hap.Service.Switch(this.name);
 
 		this.switchService.getCharacteristic(hap.Characteristic.On)
 			.on(CharacteristicEventTypes.GET, (callback: CharacteristicGetCallback) => {
-				this.log.info('Schedule: ' + (this.scheduleOn ? 'ON' : 'OFF'));
+				this.log.info(`Schedule: [${this.scheduleOn ? 'ON' : 'OFF'}]`);
 
 				callback(undefined, this.scheduleOn);
 			})
 			.on(CharacteristicEventTypes.SET, (value: CharacteristicValue, callback: CharacteristicSetCallback) => {
 				this.scheduleOn = value as boolean;
 
-				this.log.info('Schedule was set to: ' + (this.scheduleOn ? 'ON' : 'OFF'));
+				this.log.info(`Schedule was set to: [${this.scheduleOn ? 'ON' : 'OFF'}]`);
 
 				if (value) {
 					setTimeout(() => {
@@ -66,11 +97,27 @@ class ScheduleAccessory implements AccessoryPlugin {
 
 		log.info('Initialization complete');
 
-		log.info(`Sarting ${config.interval} minute schedule`);
+		// interval
+		if (intervalSupplied && !cronSupplied) {
+			log.info(`Sarting [${config.interval}] minute interval`);
 
-		setInterval(() => {
-			this.switchService.setCharacteristic('On', true);
-		}, (config.interval * 60000));
+			setInterval(() => {
+				this.switchService.setCharacteristic('On', true);
+			}, (config.interval * 60000));
+		}
+		// cron
+		else if (!intervalSupplied && cronSupplied) {
+			log.info(`Sarting [${config.cron}] cron job`);
+
+			const job = new CronJob(config.cron, () => {
+				this.switchService.setCharacteristic('On', true);
+			});
+
+			job.start();
+		}
+		else {
+			log.error('Nothing started - check config');
+		}
 	}
 
 	/*

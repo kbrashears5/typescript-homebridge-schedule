@@ -10,10 +10,15 @@
                 "type": "string",
                 "required": true
             },
-            "time": {
+            "interval": {
                 "title": "Interval",
                 "type": "number",
                 "description": "Interval, in minutes"
+            },
+            "cron": {
+                "title": "Cron",
+                "type": "string",
+                "description": "Cron string"
             }
         }
     }
