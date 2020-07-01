@@ -92,10 +92,11 @@ class ScheduleAccessory implements AccessoryPlugin {
 		else if (!interval && cron) {
 			log.info(`Sarting [${config.cron}] cron job`);
 
-			// tslint:disable-next-line: no-unused-expression
-			new CronJob(config.cron, () => {
+			const job = new CronJob(config.cron, () => {
 				this.switchService.setCharacteristic('On', true);
 			});
+
+			job.start();
 		}
 		// error - neither supplied
 		else if (!config && !cron) {
