@@ -7,11 +7,12 @@ Homebridge-Schedule is similar to [Homebridge-Dummy](https://github.com/nfarina/
 
 ## Installation
 ```
-npm i homebridge-schedule@latest -g
+sudo npm i homebridge-schedule@latest -g
 ```
 
 ## Usage
-Add accessories to your `config.json` similar to below:
+### Interval Based
+Add accessories to your `config.json` similar to below for interval based schedules:
 ```json
 {
   "accessories": [
@@ -31,6 +32,28 @@ Add accessories to your `config.json` similar to below:
 
 Upon startup of Homebridge, the device will turn on at the specified interval
 
+#### Notes
+The interval starts when Homebridge is started up. If you want something to run hourly on the hour, then you need to make sure Homebridge is started up on the hour
+
+### Cron Based
+Add accessories to your `config.json` similar to below for cron based schedules:
+```json
+{
+  "accessories": [
+    {
+      "accessory": "Schedule",
+      "name": "Hourly",
+      "cron": "* * * * * *"
+    }
+  ]
+}
+```
+| Property | Description |
+| --- | --- |
+| Accessory | Must be "Schedule" |
+| Name | Unique name for the dummy switch |
+| Cron | Cron string |
+
 ## Use Cases
 I have created a "room" called Automation in my Homekit, which then allows me to create an automation "When the Automation Hourly turns on" to check my thrermostat temperature, check the current outside temperature at my house, and based on some conditions, set the thermostat.
 
@@ -40,6 +63,3 @@ Steps:
 3. Select Turns On and add any desired time or people conditions
 4. You can then choose a scene or another accessory to control, or at the very bottom, you can create a shortcut
 5. Done! You now have one automation for things you want to happen hourly rather than 24
-
-## Notes
-The interval starts when Homebridge is started up. If you want something to run hourly on the hour, then you need to make sure Homebridge is started up on the hour
