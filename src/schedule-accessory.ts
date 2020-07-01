@@ -77,8 +77,8 @@ class ScheduleAccessory implements AccessoryPlugin {
 		log.info('Initialization complete');
 
 		// determine what was provided by config
-		const interval = this.objectOperations.IsNullOrWhitespace(config.interval);
-		const cron = this.objectOperations.IsNullOrWhitespace(config.cron);
+		const interval = this.objectOperations.IsNullOrEmpty(config.interval);
+		const cron = this.objectOperations.IsNullOrEmpty(config.cron);
 
 		// interval
 		if (interval && !cron) {
