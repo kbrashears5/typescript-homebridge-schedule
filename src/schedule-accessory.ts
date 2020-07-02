@@ -20,7 +20,7 @@ let hap: HAP;
  */
 export = (api: API) => {
 	hap = api.hap;
-	api.registerAccessory('Schedule', ScheduleAccessory);
+	api.registerAccessory('homebridge-schedule', 'Schedule', ScheduleAccessory);
 };
 
 class ScheduleAccessory implements AccessoryPlugin {
