@@ -39,8 +39,7 @@
         "noUnusedParameters": true
     },
     "include": [
-        "src",
-        "config.schema.json"
+        "src"
     ],
     "compileOnSave": false,
     "buildOnSave": false
