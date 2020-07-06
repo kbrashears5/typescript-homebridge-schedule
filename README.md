@@ -1,4 +1,17 @@
-# Homebridge-Schedule
+<h1 align="center">Homebridge-Schedule</h1>
+
+<div align="center">
+    
+<b>Automate Homebridge based on interval or cron</b>
+    
+[![Build Status](https://dev.azure.com/kbrashears5/github/_apis/build/status/kbrashears5.net-standard-http-helper?branchName=master)](https://dev.azure.com/kbrashears5/github/_build/latest?definitionId=5&branchName=master)
+[![Tests](https://img.shields.io/azure-devops/tests/kbrashears5/github/7)](https://img.shields.io/azure-devops/tests/kbrashears5/github/7)
+[![Code Coverage](https://img.shields.io/azure-devops/coverage/kbrashears5/github/7)](https://img.shields.io/azure-devops/coverage/kbrashears5/github/7)
+
+[![npm](https://img.shields.io/npm/v/homebridge-schedule)](https://img.shields.io/npm/v/homebridge-schedule)
+[![nuget](https://img.shields.io/npm/dt/homebridge-schedule)](https://img.shields.io/npm/dt/homebridge-schedule)
+</div>
+
 This [Homebridge](https://github.com/nfarina/homebridge) plugin allows you to create Homekit automations for more than just the default "A time of day occurrs"
 
 The original thought for this was to create an hourly automation to check my thermostat in the house and send me a notification if it was above or below a certain threshold

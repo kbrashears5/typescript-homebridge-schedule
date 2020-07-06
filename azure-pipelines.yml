@@ -18,6 +18,16 @@ trigger:
     include:
     - src/*
 
+# define pull request triggers (https://docs.microsoft.com/en-us/azure/devops/pipelines/repos/github?view=azure-devops&tabs=yaml#pr-triggers)
+pr:
+  autoCancel: true
+  branches:
+    include:
+    - master
+  paths:
+    include:
+    - src/*
+
 # build solution and create nuget package
 stages:
 - template: templates/build-node.yml@templates
