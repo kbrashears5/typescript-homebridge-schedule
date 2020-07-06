@@ -36,7 +36,8 @@
     },
     "files": [
         "LICENSE",
-        "dist"
+        "dist",
+        "config.schema.json"
     ],
     "scripts": {
         "build": "rimraf ./dist && tsc",
