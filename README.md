@@ -4,7 +4,7 @@
     
 <b>Automate Homebridge based on interval or cron</b>
     
-[![Build Status](https://dev.azure.com/kbrashears5/github/_apis/build/status/kbrashears5.net-standard-http-helper?branchName=master)](https://dev.azure.com/kbrashears5/github/_build/latest?definitionId=5&branchName=master)
+[![Build Status](https://dev.azure.com/kbrashears5/github/_apis/build/status/kbrashears5.net-standard-http-helper?branchName=master)](https://dev.azure.com/kbrashears5/github/_build/latest?definitionId=7&branchName=master)
 [![Tests](https://img.shields.io/azure-devops/tests/kbrashears5/github/7)](https://img.shields.io/azure-devops/tests/kbrashears5/github/7)
 [![Code Coverage](https://img.shields.io/azure-devops/coverage/kbrashears5/github/7)](https://img.shields.io/azure-devops/coverage/kbrashears5/github/7)
 
