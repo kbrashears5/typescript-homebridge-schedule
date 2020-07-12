@@ -10,6 +10,9 @@
 
 [![npm](https://img.shields.io/npm/v/homebridge-schedule)](https://img.shields.io/npm/v/homebridge-schedule)
 [![nuget](https://img.shields.io/npm/dt/homebridge-schedule)](https://img.shields.io/npm/dt/homebridge-schedule)
+
+[![verified-by-homebridge](https://badgen.net/badge/homebridge/verified/purple)](https://github.com/homebridge/homebridge/wiki/Verified-Plugins)
+
 </div>
 
 This [Homebridge](https://github.com/nfarina/homebridge) plugin allows you to create Homekit automations for more than just the default "A time of day occurrs"
