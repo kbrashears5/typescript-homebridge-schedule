@@ -17,6 +17,7 @@ trigger:
   paths:
     include:
     - src/*
+    - package.json
 
 # define pull request triggers (https://docs.microsoft.com/en-us/azure/devops/pipelines/repos/github?view=azure-devops&tabs=yaml#pr-triggers)
 pr:
@@ -27,6 +28,7 @@ pr:
   paths:
     include:
     - src/*
+    - package.json
 
 # build solution and create nuget package
 stages:
