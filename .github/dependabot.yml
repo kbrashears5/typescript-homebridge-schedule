@@ -8,3 +8,6 @@ updates:
       interval: "daily"
     # always get latest version
     versioning-strategy: increase
+    # set reviewers
+    reviewers:
+      - "kbrashears5"
