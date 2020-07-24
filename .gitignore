@@ -62,6 +62,7 @@ typings/
 
 # build files
 lib/**
+dist/**
 
 # test results
 junit.xml
