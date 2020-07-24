@@ -2,12 +2,12 @@ version: 2
 updates:
   # package.json in root directory
   - package-ecosystem: "npm"
-  directory: "/"
-  # daily at 5am UTC
-  schedule:
-    interval: "daily"
-    # always get latest version
-    versioning-strategy: increase
-    # set reviewers
-    reviewers:
-      - "kbrashears5"
+    directory: "/"
+    # daily at 5am UTC
+    schedule:
+      interval: "daily"
+      # always get latest version
+      versioning-strategy: increase
+      # set reviewers
+      reviewers:
+        - "kbrashears5"
