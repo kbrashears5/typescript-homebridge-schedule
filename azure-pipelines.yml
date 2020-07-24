@@ -30,7 +30,7 @@ pr:
     - src/*
     - package.json
 
-# build solution and create nuget package
+# build and create npm package
 stages:
 - template: templates/build-node.yml@templates
   parameters:
