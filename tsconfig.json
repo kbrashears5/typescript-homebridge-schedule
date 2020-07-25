@@ -30,7 +30,7 @@
         "noUnusedParameters": true
     },
     "include": [
-        "src// / ",
+        "src/**/*",
         "typings/"
     ],
     "compileOnSave": false,
