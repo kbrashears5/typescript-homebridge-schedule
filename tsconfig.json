@@ -11,7 +11,7 @@
         // Generates corresponding .map files
         "sourceMap": true,
         // Redirect build output to this directory
-        "outDir": "./lib",
+        "outDir": "dist",
         // Remove comments from output
         "removeComments": false,
         // Strict type checking
