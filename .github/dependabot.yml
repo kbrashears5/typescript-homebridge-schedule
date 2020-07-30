@@ -12,20 +12,20 @@ updates:
     # set reviewers
     reviewers:
       - "kbrashears5"
-    allow:
-      - dependency-type: "production"
+  #   allow:
+  #     - dependency-type: "production"
         
-  ### update dev dependencies weekly
-  # package.json in root directory
-  - package-ecosystem: "npm"
-    directory: "/"
-    # weekly on monday at 5am UTC
-    schedule:
-      interval: "weekly"
-    # always get latest version
-    versioning-strategy: increase
-    # set reviewers
-    reviewers:
-      - "kbrashears5"
-    allow:
-      - dependency-type: "development"
+  # ### update dev dependencies weekly
+  # # package.json in root directory
+  # - package-ecosystem: "npm"
+  #   directory: "/"
+  #   # weekly on monday at 5am UTC
+  #   schedule:
+  #     interval: "weekly"
+  #   # always get latest version
+  #   versioning-strategy: increase
+  #   # set reviewers
+  #   reviewers:
+  #     - "kbrashears5"
+  #   allow:
+  #     - dependency-type: "development"
