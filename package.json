@@ -24,7 +24,7 @@
     "main": "dist/schedule-accessory.js",
     "dependencies": {
         "cron": "~1.8.2",
-        "typescript-helper-functions": "~1.0.44"
+        "typescript-helper-functions": "~1.0.46"
     },
     "devDependencies": {
         "@types/cron": "~1.7.2",
