@@ -1,22 +1,21 @@
-name: sync-github-with-package-json
+name: Repo Sync
 
 on:
- push:
-  branches: [master]
+  push:
+    branches:
+      - master
+  schedule:
+    - cron: 0 0 * * *
 
 jobs:
-  sync:
+  repo_sync:
     runs-on: ubuntu-latest
     steps:
-    - name: actions/checkout
-      uses: actions/checkout@v2.0.0
-    - name: actions/setup-node
-      uses: actions/setup-node@v1.4.1
-      with:
-        node-version: "13.9.0"
-    - name: Jaid/action-sync-node-meta
-      uses: jaid/action-sync-node-meta@v1.4.0
-      with:
-        direction: overwrite-github
-        githubToken: ${{ secrets.ACTIONS }}
-        syncHomepage: false
+      - name: Fetching Local Repository
+        uses: actions/checkout@master
+      - name: Repo Sync
+        uses: kbrashears5/github-action-repo-sync@v1.0.0
+        with:
+          TYPE: npm
+          PATH: package.json
+          TOKEN: ${{ secrets.ACTIONS }}
