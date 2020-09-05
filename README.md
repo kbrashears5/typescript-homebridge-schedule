@@ -67,6 +67,13 @@ Add accessories to your `config.json` similar to below for cron based schedules:
 | Name | Unique name for the dummy switch |
 | Cron | Cron string |
 
+Cron string details: https://www.npmjs.com/package/cron
+
+Cron string uses seconds, so for an hourly cron string use:
+> "0 0 * * * *"
+
+> "{seconds} {minutes} {hours} {days} {months} {weeks}"
+
 ## Use Cases
 I have created a "room" called Automation in my Homekit, which then allows me to create an automation "When the Automation Hourly turns on" to check my thrermostat temperature, check the current outside temperature at my house, and based on some conditions, set the thermostat.
 
