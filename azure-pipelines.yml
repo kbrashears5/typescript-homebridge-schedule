@@ -9,6 +9,10 @@ resources:
       name: kbrashears5/yaml
       endpoint: kbrashears5
 
+# define variable groups (https://docs.microsoft.com/en-us/azure/devops/pipelines/library/variable-groups?view=azure-devops&tabs=yaml#use-a-variable-group)
+variables:
+- group: github
+
 # define build triggers (https://docs.microsoft.com/en-us/azure/devops/pipelines/yaml-schema?view=azure-devops&tabs=example#trigger)
 trigger:
   branches:
