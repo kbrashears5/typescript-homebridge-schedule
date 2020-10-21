@@ -1,11 +1,9 @@
-name: Repo Sync
+name: Repo Metadata Sync
 
 on:
   push:
     branches:
       - master
-  schedule:
-    - cron: 0 0 * * *
 
 jobs:
   repo_sync:
