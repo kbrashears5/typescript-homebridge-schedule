@@ -6,7 +6,7 @@ updates:
     directory: "/"
     # daily at 5am UTC
     schedule:
-      interval: "daily"
+      interval: "weekly"
     # always get latest version
     versioning-strategy: increase
     # set reviewers
