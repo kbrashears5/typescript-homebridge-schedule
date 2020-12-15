@@ -1,0 +1,14 @@
+name: Repository Issue Assigner
+
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  issue_assigner:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Issue Notifier
+        uses: kbrashears5/github-action-issue-notifier@master
+        with:
+          TOKEN: ${{ secrets.BOT_TOKEN }}
