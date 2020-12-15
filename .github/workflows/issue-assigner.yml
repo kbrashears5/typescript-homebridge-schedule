@@ -11,4 +11,4 @@ jobs:
       - name: Issue Notifier
         uses: kbrashears5/github-action-issue-notifier@master
         with:
-          TOKEN: ${{ secrets.BOT_TOKEN }}
+          TOKEN: ${{ secrets.BOT_ACTIONS }}
