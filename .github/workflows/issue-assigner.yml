@@ -9,6 +9,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Issue Notifier
-        uses: kbrashears5/github-action-issue-notifier@master
+        uses: kbrashears5/github-action-issue-assigner@master
         with:
           TOKEN: ${{ secrets.BOT_ACTIONS }}
