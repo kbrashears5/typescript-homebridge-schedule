@@ -24,16 +24,16 @@
     "main": "dist/schedule-accessory.js",
     "dependencies": {
         "cron": "~1.8.2",
-        "typescript-helper-functions": "~1.0.94"
+        "typescript-helper-functions": "~1.0.99"
     },
     "devDependencies": {
         "@types/cron": "~1.7.2",
-        "@types/node": "~14.14.12",
-        "homebridge": "~1.1.6",
+        "@types/node": "~14.14.16",
+        "homebridge": "~1.1.7",
         "npm-run-all": "~4.1.5",
         "rimraf": "~3.0.2",
         "tslint": "~6.1.3",
-        "typescript": "~4.1.2"
+        "typescript": "~4.1.3"
     },
     "files": [
         "LICENSE",
