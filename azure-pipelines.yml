@@ -11,31 +11,31 @@ resources:
 
 # define variable groups (https://docs.microsoft.com/en-us/azure/devops/pipelines/library/variable-groups?view=azure-devops&tabs=yaml#use-a-variable-group)
 variables:
-- group: github
+  - group: github
 
 # define build triggers (https://docs.microsoft.com/en-us/azure/devops/pipelines/yaml-schema?view=azure-devops&tabs=example#trigger)
 trigger:
   branches:
     include:
-    - master
+      - master
   paths:
     include:
-    - src/*
-    - package.json
+      - src/*
+      - package.json
 
 # define pull request triggers (https://docs.microsoft.com/en-us/azure/devops/pipelines/repos/github?view=azure-devops&tabs=yaml#pr-triggers)
 pr:
   autoCancel: true
   branches:
     include:
-    - master
+      - master
   paths:
     include:
-    - src/*
-    - package.json
+      - src/*
+      - package.json
 
 # build and create npm package
 stages:
-- template: templates/build-node.yml@templates
-  parameters:
-    pack: true
+  - template: templates/build-node.yml@templates
+    parameters:
+      pack: true

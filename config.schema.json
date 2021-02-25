@@ -1,25 +1,25 @@
 {
-    "pluginAlias": "Schedule",
-    "pluginType": "accessory",
-    "singular": false,
-    "schema": {
-        "type": "object",
-        "properties": {
-            "name": {
-                "title": "Name",
-                "type": "string",
-                "required": true
-            },
-            "interval": {
-                "title": "Interval",
-                "type": "number",
-                "description": "Interval, in minutes"
-            },
-            "cron": {
-                "title": "Cron",
-                "type": "string",
-                "description": "Cron string"
-            }
-        }
+  "pluginAlias": "Schedule",
+  "pluginType": "accessory",
+  "singular": false,
+  "schema": {
+    "type": "object",
+    "properties": {
+      "name": {
+        "title": "Name",
+        "type": "string",
+        "required": true
+      },
+      "interval": {
+        "title": "Interval",
+        "type": "number",
+        "description": "Interval, in minutes"
+      },
+      "cron": {
+        "title": "Cron",
+        "type": "string",
+        "description": "Cron string"
+      }
     }
+  }
 }
