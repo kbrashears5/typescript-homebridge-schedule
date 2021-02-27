@@ -2,20 +2,20 @@ name: Close Stale Issues
 
 on:
   schedule:
-  - cron: 0 0 * * *
+    - cron: 0 0 * * *
 
 jobs:
   stale_issues:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/stale@v3
-      with:
-        days-before-stale: 60
-        days-before-close: 7
-        stale-issue-message: This issue has not received a response in a timely manner. If you still think there is a problem, please leave a comment to avoid the issue from automatically closing.
-        stale-pr-message: This PR has not received a response in a timely manner. If you still think there is a problem, please leave a comment to avoid the PR from automatically closing.
-        close-issue-message: This issue has been automatically closed. Please create a new issue if it still exists.
-        close-pr-message: This PR has been automatically closed. Please create a new PR or reopen this one.
-        stale-issue-label: closing-soon
-        stale-pr-label: closing-soon
-        repo-token: ${{ secrets.ACTIONS }}
+      - uses: actions/stale@v3
+        with:
+          days-before-stale: 60
+          days-before-close: 7
+          stale-issue-message: This issue has not received a response in a timely manner. If you still think there is a problem, please leave a comment to avoid the issue from automatically closing.
+          stale-pr-message: This PR has not received a response in a timely manner. If you still think there is a problem, please leave a comment to avoid the PR from automatically closing.
+          close-issue-message: This issue has been automatically closed. Please create a new issue if it still exists.
+          close-pr-message: This PR has been automatically closed. Please create a new PR or reopen this one.
+          stale-issue-label: closing-soon
+          stale-pr-label: closing-soon
+          repo-token: ${{ secrets.ACTIONS }}

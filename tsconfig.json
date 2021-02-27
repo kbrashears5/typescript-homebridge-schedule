@@ -1,38 +1,21 @@
 {
-    "compilerOptions": {
-        // Specify ECMAScript target version: ES3, ES5, ES2015, ES2016, ES2017, ESNEXT
-        "target": "ES2015",
-        // Specify module code generation: commonjs, amd, system, umd, es2015
-        "module": "commonjs",
-        // Generates corresponding .d.ts files
-        "declaration": true,
-        // Allow JS files to be compiled
-        "checkJs": false,
-        // Generates corresponding .map files
-        "sourceMap": true,
-        // Redirect build output to this directory
-        "outDir": "dist",
-        // Remove comments from output
-        "removeComments": false,
-        // Strict type checking
-        "strict": true,
-        // Show error for expressions and declarations with implied 'any' type
-        "noImplicitAny": true,
-        // Show error for this expressions with implied 'any' type
-        "noImplicitThis": true,
-        // Show error when not all code paths return value
-        "noImplicitReturns": true,
-        // Skip checking for *.d.ts files
-        "skipLibCheck": true,
-        // Show error for unused locals
-        "noUnusedLocals": true,
-        // Show error for unused parameters
-        "noUnusedParameters": true
-    },
-    "include": [
-        "src/**/*",
-        "typings/"
-    ],
-    "compileOnSave": false,
-    "buildOnSave": false
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "CommonJS",
+    "declaration": true,
+    "checkJs": true,
+    "sourceMap": true,
+    "outDir": ".dist",
+    "removeComments": true,
+    "strict": true,
+    "noImplicitAny": true,
+    "noImplicitThis": true,
+    "noImplicitReturns": true,
+    "skipLibCheck": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true
+  },
+  "include": ["src/**/*"],
+  "compileOnSave": false,
+  "buildOnSave": false
 }

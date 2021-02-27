@@ -1,0 +1,7 @@
+# ignore artifacts
+build
+coverage
+lib
+
+# ignore node_modules
+node_modules

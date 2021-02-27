@@ -2,30 +2,13 @@ version: 2
 updates:
   ### update dependencies daily
   # package.json in root directory
-  - package-ecosystem: "npm"
-    directory: "/"
+  - package-ecosystem: 'npm'
+    directory: '/'
     # daily at 5am UTC
     schedule:
-      interval: "weekly"
+      interval: 'weekly'
     # always get latest version
     versioning-strategy: increase
     # set reviewers
     reviewers:
-      - "kbrashears5"
-  #   allow:
-  #     - dependency-type: "production"
-        
-  # ### update dev dependencies weekly
-  # # package.json in root directory
-  # - package-ecosystem: "npm"
-  #   directory: "/"
-  #   # weekly on monday at 5am UTC
-  #   schedule:
-  #     interval: "weekly"
-  #   # always get latest version
-  #   versioning-strategy: increase
-  #   # set reviewers
-  #   reviewers:
-  #     - "kbrashears5"
-  #   allow:
-  #     - dependency-type: "development"
+      - 'kbrashears5'
