@@ -4,6 +4,7 @@
     "Parens",
     "automations",
     "codeql",
+    "eqeqeq",
     "postpublish",
     "prebuild"
   ]
