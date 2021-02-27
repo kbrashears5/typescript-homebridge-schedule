@@ -24,7 +24,7 @@
   "main": "dist/schedule-accessory.js",
   "dependencies": {
     "cron": "~1.8.2",
-    "typescript-helper-functions": "~1.0.105"
+    "typescript-helper-functions": "~1.0.113"
   },
   "devDependencies": {
     "@types/cron": "~1.7.2",
@@ -58,8 +58,8 @@
     "update:typescript-helper-functions": "npm i typescript-helper-functions@latest",
     "update:types-cron": "npm i @types/cron@latest --save-dev",
     "update:types-node": "npm i @types/node@latest --save-dev",
-    "update:typescript-eslint-plugin": "npm i @typescript-eslint/eslint-plugin --save-dev",
-    "update:typescript-eslint-parser": "npm i @typescript-eslint/parser --save-dev",
+    "update:typescript-eslint-plugin": "npm i @typescript-eslint/eslint-plugin@latest --save-dev",
+    "update:typescript-eslint-parser": "npm i @typescript-eslint/parser@latest --save-dev",
     "update:eslint": "npm i eslint@latest --save-dev",
     "update:eslint-config-prettier": "npm i eslint-config-prettier@latest --save-dev",
     "update:eslint-config-standard": "npm i eslint-config-standard@latest --save-dev",
