@@ -18,4 +18,4 @@ jobs:
           close-pr-message: This PR has been automatically closed. Please create a new PR or reopen this one.
           stale-issue-label: closing-soon
           stale-pr-label: closing-soon
-          repo-token: ${{ secrets.ACTIONS }}
+          repo-token: ${{ secrets.BOT_ACTIONS }}
