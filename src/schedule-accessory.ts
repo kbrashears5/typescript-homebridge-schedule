@@ -1,3 +1,4 @@
+/* eslint-disable no-undefined */
 import {
   AccessoryConfig,
   AccessoryPlugin,
@@ -14,14 +15,6 @@ import { ObjectOperations } from 'typescript-helper-functions';
 import { CronJob } from 'cron';
 
 let hap: HAP;
-
-/*
- * Initializer function called when the plugin is loaded.
- */
-export = (api: API) => {
-  hap = api.hap;
-  api.registerAccessory('homebridge-schedule', 'Schedule', ScheduleAccessory);
-};
 
 class ScheduleAccessory implements AccessoryPlugin {
   private readonly log: Logging;
@@ -134,3 +127,11 @@ class ScheduleAccessory implements AccessoryPlugin {
     return [this.informationService, this.switchService];
   }
 }
+
+/*
+ * Initializer function called when the plugin is loaded.
+ */
+export = (api: API) => {
+  hap = api.hap;
+  api.registerAccessory('homebridge-schedule', 'Schedule', ScheduleAccessory);
+};

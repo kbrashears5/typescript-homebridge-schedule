@@ -61,8 +61,8 @@ typings/
 .next
 
 # build files
-lib/**
-dist/**
+lib
+dist
 
 # test results
 junit.xml
