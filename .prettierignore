@@ -1,5 +1,7 @@
+# ignore artifacts
 build
 coverage
-dist
 lib
+
+# ignore node_modules
 node_modules
