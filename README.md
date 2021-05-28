@@ -4,7 +4,8 @@
     
 <b>Automate Homebridge based on interval or cron</b>
     
-[![Build Status](https://dev.azure.com/kbrashears5/github/_apis/build/status/kbrashears5.homebridge-schedule?branchName=master)](https://dev.azure.com/kbrashears5/github/_build/latest?definitionId=7&branchName=master)
+[![CI/CD](https://github.com/kbrashears5/homebridge-schedule/actions/workflows/ci-cd.yml/badge.svg)](https://github.com/kbrashears5/homebridge-schedule/actions/workflows/ci-cd.yml)
+
 [![npm](https://img.shields.io/npm/v/homebridge-schedule)](https://img.shields.io/npm/v/homebridge-schedule)
 [![downloads](https://img.shields.io/npm/dt/homebridge-schedule)](https://img.shields.io/npm/dt/homebridge-schedule)
 
@@ -122,3 +123,13 @@ Create shortcut:
 
 ![Step5](https://github.com/kbrashears5/homebridge-schedule/blob/master/images/step5_1.jpg?raw=true)
 ![Step5](https://github.com/kbrashears5/homebridge-schedule/blob/master/images/step5_2.jpg?raw=true)
+
+## Development
+
+Clone the latest and run
+
+```npm
+npm run prep
+```
+
+to install packages and prep the git hooks

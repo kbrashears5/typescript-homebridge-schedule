@@ -5,6 +5,7 @@
     "automations",
     "codeql",
     "eqeqeq",
+    "martinbeentjes",
     "postpublish",
     "prebuild"
   ]
