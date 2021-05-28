@@ -1,0 +1,7 @@
+#!/bin/sh
+
+echo "Bumping package version"
+npm version patch --commit-hook false --git-tag-version false --force
+git add package.json
+echo "Update package version"
+exit 0
