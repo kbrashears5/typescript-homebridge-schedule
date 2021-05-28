@@ -1,6 +1,6 @@
 {
   "name": "homebridge-schedule",
-  "version": "1.0.127",
+  "version": "1.0.128",
   "description": "Scheduled, repeatable triggers for Homebridge automation with HomeKit",
   "repository": {
     "type": "git",
@@ -51,6 +51,7 @@
     "clean": "rimraf ./dist",
     "format": "prettier --write .",
     "lint": "eslint -c .eslintrc.yml \"*/**\"",
+    "postinstall": "node-git-hooks",
     "prebuild": "npm run clean && npm run format && npm run lint",
     "test": "echo \"Error: no test specified\" && exit 0",
     "update:cron": "npm i cron@latest",
