@@ -1,6 +1,6 @@
 {
   "name": "homebridge-schedule",
-  "version": "1.0.129",
+  "version": "1.0.130",
   "description": "Scheduled, repeatable triggers for Homebridge automation with HomeKit",
   "repository": {
     "type": "git",
@@ -24,13 +24,13 @@
   "main": "dist/schedule-accessory.js",
   "dependencies": {
     "cron": "~1.8.2",
-    "typescript-helper-functions": "~1.0.151"
+    "typescript-helper-functions": "~1.0.152"
   },
   "devDependencies": {
     "@types/cron": "~1.7.2",
-    "@types/node": "~15.6.1",
-    "@typescript-eslint/eslint-plugin": "~4.25.0",
-    "@typescript-eslint/parser": "~4.25.0",
+    "@types/node": "~15.12.0",
+    "@typescript-eslint/eslint-plugin": "~4.26.0",
+    "@typescript-eslint/parser": "~4.26.0",
     "eslint": "~7.27.0",
     "eslint-config-prettier": "~8.3.0",
     "eslint-plugin-prettier": "~3.4.0",
@@ -52,7 +52,7 @@
     "format": "prettier --write .",
     "lint": "eslint -c .eslintrc.yml \"*/**\"",
     "prebuild": "npm run clean && npm run format && npm run lint",
-    "prep": "npm run update && node-git-hooks",
+    "prep": "npm run update:npm-run-all && npm run update && node-git-hooks",
     "test": "echo \"Error: no test specified\" && exit 0",
     "update:cron": "npm i cron@latest",
     "update:eslint-config-prettier": "npm i eslint-config-prettier@latest --save-dev",

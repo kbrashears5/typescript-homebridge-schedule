@@ -27,18 +27,20 @@ jobs:
         with:
           node-version: 14.x
           registry-url: 'https://registry.npmjs.org'
-      - run: npm install
-        name: Install
-      - run: npm run build
-        name: Build
-      - run: npm test
-        name: Test
-      - run: npm publish
-        name: Publish NPM Package
+      - name: Install Dependencies
+        run: npm install --package-lock false
+      - name: Build Package
+        run: npm run build
+      - name: Test Code
+        run: npm test
+      - name: Publish Package
+        if: ${{ github.ref == 'refs/heads/master' }}
+        run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM }}
   release:
     runs-on: ubuntu-latest
+    if: ${{ github.ref == 'refs/heads/master' }}
     needs: build
 
     steps:
