@@ -4,9 +4,9 @@ updates:
   # package.json in root directory
   - package-ecosystem: 'npm'
     directory: '/'
-    # daily at 5am UTC
+    # monthly at 5am UTC
     schedule:
-      interval: 'weekly'
+      interval: 'monthly'
     # always get latest version
     versioning-strategy: increase
     # set reviewers
