@@ -8,10 +8,12 @@ parserOptions:
   sourceType: module
 plugins:
   - '@typescript-eslint'
+  - jest
   - prettier
 extends:
   - eslint:recommended
   - plugin:@typescript-eslint/recommended
+  - plugin:jest/recommended
   - prettier
 rules:
   '@typescript-eslint/explicit-module-boundary-types': off
