@@ -28,7 +28,7 @@ jobs:
           node-version: 14.x
           registry-url: 'https://registry.npmjs.org'
       - name: Install Dependencies
-        run: npm install --package-lock false
+        run: npm install
       - name: Build Package
         run: npm run build
       - name: Test Code
