@@ -4,8 +4,8 @@
     
 <b>Automate Homebridge based on interval or cron</b>
     
-[![CI/CD](https://github.com/kbrashears5/homebridge-schedule/actions/workflows/ci-cd.yml/badge.svg)](https://github.com/kbrashears5/homebridge-schedule/actions/workflows/ci-cd.yml)
-
+[![CI/CD](https://github.com/kbrashears5/typescript-homebridge-schedule/actions/workflows/ci-cd.yml/badge.svg)](https://github.com/kbrashears5/typescript-homebridge-schedule/actions/workflows/ci-cd.yml)
+[![codecov](https://codecov.io/gh/kbrashears5/typescript-homebridge-schedule/branch/master/graph/badge.svg?token=06RRABIO9Y)](https://codecov.io/gh/kbrashears5/typescript-homebridge-schedule)
 [![npm](https://img.shields.io/npm/v/homebridge-schedule)](https://img.shields.io/npm/v/homebridge-schedule)
 [![downloads](https://img.shields.io/npm/dt/homebridge-schedule)](https://img.shields.io/npm/dt/homebridge-schedule)
 
@@ -100,16 +100,16 @@ Steps:
 ## Creating HomeKit Automations
 
 Create new Accessory automation:
-![Step1](https://github.com/kbrashears5/homebridge-schedule/blob/master/images/step1.jpg?raw=true)
+![Step1](https://github.com/kbrashears5/typescript-homebridge-schedule/blob/master/images/step1.jpg?raw=true)
 
 Choose the accessory created by homebridge-schedule:
-![Step2](https://github.com/kbrashears5/homebridge-schedule/blob/master/images/step2.jpg?raw=true)
+![Step2](https://github.com/kbrashears5/typescript-homebridge-schedule/blob/master/images/step2.jpg?raw=true)
 
 Select when it turns on or turns off and any time or people configurations
-![Step3](https://github.com/kbrashears5/homebridge-schedule/blob/master/images/step3.jpg?raw=true)
+![Step3](https://github.com/kbrashears5/typescript-homebridge-schedule/blob/master/images/step3.jpg?raw=true)
 
 Scroll all the way to the bottom and choose `Convert to Shortcut`
-![Step4](https://github.com/kbrashears5/homebridge-schedule/blob/master/images/step4.jpg?raw=true)
+![Step4](https://github.com/kbrashears5/typescript-homebridge-schedule/blob/master/images/step4.jpg?raw=true)
 
 Create shortcut:
 
@@ -121,8 +121,8 @@ Create shortcut:
    - If the current weather outside is also above a threshold
      - Turn on fans, set thermostat, etc.
 
-![Step5](https://github.com/kbrashears5/homebridge-schedule/blob/master/images/step5_1.jpg?raw=true)
-![Step5](https://github.com/kbrashears5/homebridge-schedule/blob/master/images/step5_2.jpg?raw=true)
+![Step5](https://github.com/kbrashears5/typescript-homebridge-schedule/blob/master/images/step5_1.jpg?raw=true)
+![Step5](https://github.com/kbrashears5/typescript-homebridge-schedule/blob/master/images/step5_2.jpg?raw=true)
 
 ## Development
 
