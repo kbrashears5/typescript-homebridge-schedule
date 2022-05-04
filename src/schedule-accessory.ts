@@ -31,6 +31,8 @@ class ScheduleAccessory implements AccessoryPlugin {
 
     this.log = log;
     this.name = config.name;
+    
+    this.serial = (config.serial ?? '123456789').trim();  
 
     // log config parameters
     log.debug(`Name: [${config.name}]`);
@@ -42,7 +44,7 @@ class ScheduleAccessory implements AccessoryPlugin {
     if (config.interval === undefined) {
       intervalSupplied = false;
     }
-    log.debug(`Interval param supplied: [${intervalSupplied}]`);
+    log.debug(`Interval param supplied: [${intervalSupplied}]`);    
 
     const cronSupplied = !this.objectOperations.IsNullOrWhitespace(config.cron);
     log.debug(`Cron param supplied: [${cronSupplied}]`);
@@ -92,7 +94,7 @@ class ScheduleAccessory implements AccessoryPlugin {
 
     this.informationService = new hap.Service.AccessoryInformation()
       .setCharacteristic(hap.Characteristic.Manufacturer, 'Homebridge Schedule')
-      .setCharacteristic(hap.Characteristic.SerialNumber, '123456789')
+      .setCharacteristic(hap.Characteristic.SerialNumber, this.serial)
       .setCharacteristic(hap.Characteristic.Model, config.interval);
 
     log.info('Initialization complete');
