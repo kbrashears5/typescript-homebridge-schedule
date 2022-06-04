@@ -19,6 +19,7 @@ let hap: HAP;
 class ScheduleAccessory implements AccessoryPlugin {
   private readonly log: Logging;
   private readonly name: string;
+  private readonly serial: string;
   private scheduleOn = false;
 
   private readonly switchService: Service;
@@ -31,11 +32,13 @@ class ScheduleAccessory implements AccessoryPlugin {
 
     this.log = log;
     this.name = config.name;
+    this.serial = (config.serial ?? '123456789').trim();
 
     // log config parameters
     log.debug(`Name: [${config.name}]`);
     log.debug(`Interval: [${config.interval}]`);
     log.debug(`Cron: [${config.cron}]`);
+    log.debug(`Serial: [${config.serial}]`);
 
     // determine what was provided by config
     let intervalSupplied = true;
@@ -66,7 +69,7 @@ class ScheduleAccessory implements AccessoryPlugin {
       .on(
         CharacteristicEventTypes.GET,
         (callback: CharacteristicGetCallback) => {
-          this.log.info(`Schedule: [${this.scheduleOn ? 'ON' : 'OFF'}]`);
+          this.log.debug(`Schedule: [${this.scheduleOn ? 'ON' : 'OFF'}]`);
 
           callback(undefined, this.scheduleOn);
         },
@@ -92,7 +95,7 @@ class ScheduleAccessory implements AccessoryPlugin {
 
     this.informationService = new hap.Service.AccessoryInformation()
       .setCharacteristic(hap.Characteristic.Manufacturer, 'Homebridge Schedule')
-      .setCharacteristic(hap.Characteristic.SerialNumber, '123456789')
+      .setCharacteristic(hap.Characteristic.SerialNumber, this.serial)
       .setCharacteristic(hap.Characteristic.Model, config.interval);
 
     log.info('Initialization complete');

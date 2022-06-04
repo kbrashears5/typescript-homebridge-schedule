@@ -5,7 +5,6 @@
 <b>Automate Homebridge based on interval or cron</b>
     
 [![CI/CD](https://github.com/kbrashears5/typescript-homebridge-schedule/actions/workflows/ci-cd.yml/badge.svg)](https://github.com/kbrashears5/typescript-homebridge-schedule/actions/workflows/ci-cd.yml)
-[![codecov](https://codecov.io/gh/kbrashears5/typescript-homebridge-schedule/branch/master/graph/badge.svg?token=06RRABIO9Y)](https://codecov.io/gh/kbrashears5/typescript-homebridge-schedule)
 [![npm](https://img.shields.io/npm/v/homebridge-schedule)](https://img.shields.io/npm/v/homebridge-schedule)
 [![downloads](https://img.shields.io/npm/dt/homebridge-schedule)](https://img.shields.io/npm/dt/homebridge-schedule)
 
@@ -37,17 +36,19 @@ Add accessories to your `config.json` similar to below for interval based schedu
     {
       "accessory": "Schedule",
       "name": "Hourly",
-      "interval": 60
+      "interval": 60,
+      "serial": "123456789"
     }
   ]
 }
 ```
 
-| Property  | Description                      |
-| --------- | -------------------------------- |
-| Accessory | Must be "Schedule"               |
-| Name      | Unique name for the dummy switch |
-| Interval  | Interval, in minutes             |
+| Property  | Description                                                           |
+| --------- | --------------------------------------------------------------------- |
+| Accessory | Must be "Schedule"                                                    |
+| Name      | Unique name for the dummy switch                                      |
+| Interval  | Interval, in minutes                                                  |
+| Serial    | Serial number to give the accessory in HomeKit. Defaults to 123456789 |
 
 Upon startup of Homebridge, the device will turn on at the specified interval
 
@@ -65,17 +66,19 @@ Add accessories to your `config.json` similar to below for cron based schedules:
     {
       "accessory": "Schedule",
       "name": "Hourly",
-      "cron": "* * * * * *"
+      "cron": "* * * * * *",
+      "serial": "123456789"
     }
   ]
 }
 ```
 
-| Property  | Description                      |
-| --------- | -------------------------------- |
-| Accessory | Must be "Schedule"               |
-| Name      | Unique name for the dummy switch |
-| Cron      | Cron string                      |
+| Property  | Description                                                           |
+| --------- | --------------------------------------------------------------------- |
+| Accessory | Must be "Schedule"                                                    |
+| Name      | Unique name for the dummy switch                                      |
+| Cron      | Cron string                                                           |
+| Serial    | Serial number to give the accessory in HomeKit. Defaults to 123456789 |
 
 Cron string details: https://www.npmjs.com/package/cron
 

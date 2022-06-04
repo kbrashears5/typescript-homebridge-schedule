@@ -10,6 +10,12 @@
         "type": "string",
         "required": true
       },
+      "serial": {
+        "description": "Serial for the schedule accessory (changing this will break existing HomeKit automations), defaults to '123456789'",
+        "title": "Serial",
+        "type": "string",
+        "required": false
+      },
       "interval": {
         "title": "Interval",
         "type": "number",
