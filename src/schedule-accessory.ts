@@ -21,6 +21,7 @@ class ScheduleAccessory implements AccessoryPlugin {
   private readonly name: string;
   private readonly serial: string;
   private scheduleOn = false;
+  private enabledDuration: number;
 
   private readonly switchService: Service;
   private readonly informationService: Service;
@@ -33,12 +34,14 @@ class ScheduleAccessory implements AccessoryPlugin {
     this.log = log;
     this.name = config.name;
     this.serial = (config.serial ?? '123456789').trim();
+    this.enabledDuration = ((config.enabledDuration ?? 1) * 1000);
 
     // log config parameters
     log.debug(`Name: [${config.name}]`);
     log.debug(`Interval: [${config.interval}]`);
     log.debug(`Cron: [${config.cron}]`);
     log.debug(`Serial: [${config.serial}]`);
+    log.debug(`Enabled Duration: [${config.enabledDuration}]`);
 
     // determine what was provided by config
     let intervalSupplied = true;
@@ -86,7 +89,7 @@ class ScheduleAccessory implements AccessoryPlugin {
           if (value) {
             setTimeout(() => {
               this.switchService.setCharacteristic('On', false);
-            }, 1000);
+            }, this.enabledDuration);
           }
 
           callback();
