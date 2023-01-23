@@ -37,24 +37,28 @@ Add accessories to your `config.json` similar to below for interval based schedu
       "accessory": "Schedule",
       "name": "Hourly",
       "interval": 60,
-      "serial": "123456789"
+      "serial": "123456789",
+      "enabledDuration": 10
     }
   ]
 }
 ```
 
-| Property  | Description                                                           |
-| --------- | --------------------------------------------------------------------- |
-| Accessory | Must be "Schedule"                                                    |
-| Name      | Unique name for the dummy switch                                      |
-| Interval  | Interval, in minutes                                                  |
-| Serial    | Serial number to give the accessory in HomeKit. Defaults to 123456789 |
+| Property         | Description                                                                      |
+|------------------|----------------------------------------------------------------------------------|
+| Accessory        | Must be "Schedule"                                                               |
+| Name             | Unique name for the dummy switch                                                 |
+| Interval         | Interval, in minutes                                                             |
+| Serial           | Serial number to give the accessory in HomeKit. Defaults to 123456789            |
+| Enabled Duration | Number of seconds to leave switch enabled before disabling. Defaults to 1 second |
 
 Upon startup of Homebridge, the device will turn on at the specified interval
 
 #### Notes
 
 The interval starts when Homebridge is started up. If you want something to run hourly on the hour, then you need to make sure Homebridge is started up on the hour
+
+Rarely, if your HomeKit bridge is too sluggish to detect Homebridge Schedule switches turning on and off, you can configure an Enabled Duration to have the switches remain on longer
 
 ### Cron Based
 
@@ -73,12 +77,13 @@ Add accessories to your `config.json` similar to below for cron based schedules:
 }
 ```
 
-| Property  | Description                                                           |
-| --------- | --------------------------------------------------------------------- |
-| Accessory | Must be "Schedule"                                                    |
-| Name      | Unique name for the dummy switch                                      |
-| Cron      | Cron string                                                           |
-| Serial    | Serial number to give the accessory in HomeKit. Defaults to 123456789 |
+| Property         | Description                                                                      |
+|------------------|----------------------------------------------------------------------------------|
+| Accessory        | Must be "Schedule"                                                               |
+| Name             | Unique name for the dummy switch                                                 |
+| Cron             | Cron string                                                                      |
+| Serial           | Serial number to give the accessory in HomeKit. Defaults to 123456789            |
+| Enabled Duration | Number of seconds to leave switch enabled before disabling. Defaults to 1 second |
 
 Cron string details: https://www.npmjs.com/package/cron
 

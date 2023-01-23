@@ -25,6 +25,12 @@
         "title": "Cron",
         "type": "string",
         "description": "Cron string"
+      },
+      "enabledDuration": {
+        "title": "Enabled Duration",
+        "type": "number",
+        "description": "Number of seconds to leave switch on for before disabling",
+        "required": false
       }
     }
   }
