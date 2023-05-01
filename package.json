@@ -35,7 +35,7 @@
     "eslint": "~8.17.0",
     "eslint-config-prettier": "~8.5.0",
     "eslint-plugin-jest": "~26.4.6",
-    "eslint-plugin-prettier": "~4.0.0",
+    "eslint-plugin-prettier": "~4.2.1",
     "homebridge": "~1.4.1",
     "jest": "~28.1.0",
     "jest-junit": "~13.2.0",
