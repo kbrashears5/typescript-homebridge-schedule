@@ -1,0 +1,19 @@
+name: Repo Metadata Sync
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  repo_sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fetching Local Repository
+        uses: actions/checkout@v3
+      - name: Repo Sync
+        uses: kbrashears5/github-action-repo-sync@v2.0.0
+        with:
+          TYPE: npm
+          PATH: package.json
+          TOKEN: ${{ secrets.ACTIONS }}
