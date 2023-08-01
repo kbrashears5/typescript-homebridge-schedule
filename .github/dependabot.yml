@@ -1,14 +1,19 @@
 version: 2
 updates:
-  ### update dependencies daily
-  # package.json in root directory
-  - package-ecosystem: 'npm'
+  - package-ecosystem: 'github-actions'
     directory: '/'
-    # monthly at 5am UTC
     schedule:
-      interval: 'monthly'
-    # always get latest version
-    versioning-strategy: increase
-    # set reviewers
+      interval: 'weekly'
     reviewers:
       - 'kbrashears5'
+
+  - package-ecosystem: 'npm'
+    directory: '/'
+    schedule:
+      interval: 'monthly'
+    reviewers:
+      - 'kbrashears5'
+    groups:
+      all:
+        patterns:
+          - '*'
