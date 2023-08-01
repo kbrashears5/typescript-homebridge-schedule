@@ -31,7 +31,7 @@ jobs:
         run: npm run build
       - name: Test Code
         run: npm test
-      - uses: codecov/codecov-action@v1
+      - uses: codecov/codecov-action@v3
       - name: Publish Package
         if: ${{ github.ref == 'refs/heads/main' }}
         run: npm publish
