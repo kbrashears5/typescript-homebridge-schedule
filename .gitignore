@@ -66,6 +66,3 @@ dist
 
 # test results
 junit.xml
-
-# jetbrains ide
-.idea/
