@@ -3,14 +3,12 @@ name: CI/CD
 on:
   push:
     branches:
-      - master
       - main
     paths:
       - src/**
       - package.json
   pull_request:
     branches:
-      - master
       - main
     paths:
       - src/**
@@ -22,10 +20,10 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - name: Use Node.js 14.x
+      - name: Use Node.js 18.x
         uses: actions/setup-node@v2
         with:
-          node-version: 14.x
+          node-version: 18.x
           registry-url: https://registry.npmjs.org
       - name: Install Dependencies
         run: npm install
@@ -35,22 +33,22 @@ jobs:
         run: npm test
       - uses: codecov/codecov-action@v1
       - name: Publish Package
-        if: ${{ github.ref == 'refs/heads/master' }}
+        if: ${{ github.ref == 'refs/heads/main' }}
         run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM }}
   release:
     runs-on: ubuntu-latest
-    if: ${{ github.ref == 'refs/heads/master' }}
+    if: ${{ github.ref == 'refs/heads/main' }}
     needs: build
 
     steps:
       - uses: actions/checkout@v2
       - name: Get NPM Version
         id: package-version
-        uses: martinbeentjes/npm-get-version-action@master
+        uses: martinbeentjes/npm-get-version-action@main
       - name: Github Release
-        uses: kbrashears5/github-action-release-maker@master
+        uses: kbrashears5/github-action-release-maker@main
         with:
           VERSION: ${{ steps.package-version.outputs.current-version}}
           TOKEN: ${{ secrets.ACTIONS }}
